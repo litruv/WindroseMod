@@ -18,6 +18,17 @@ function Resolve-UnrealEngineRoot {
         throw "UnrealEditor-Cmd not found under -UeRoot: $cmd"
     }
 
+    $configScript = Join-Path (Split-Path $UprojectPath -Parent) "Get-WindroseModConfig.ps1"
+    if (Test-Path -LiteralPath $configScript) {
+        . $configScript
+        $cfg = Get-WindroseModConfig -ProjectRoot (Split-Path $UprojectPath -Parent)
+        if ($cfg.UeRoot) {
+            $root = $cfg.UeRoot.TrimEnd('\')
+            $cmd = Join-Path $root "Engine\Binaries\Win64\UnrealEditor-Cmd.exe"
+            if (Test-Path -LiteralPath $cmd) { return $root }
+        }
+    }
+
     if ($env:UE_ROOT) {
         $root = $env:UE_ROOT.TrimEnd('\')
         $cmd = Join-Path $root "Engine\Binaries\Win64\UnrealEditor-Cmd.exe"
@@ -39,7 +50,7 @@ function Resolve-UnrealEngineRoot {
 
     throw @"
 Could not find Unreal Engine ($appName) for $UprojectPath.
-Install UE via Epic Launcher, set UE_ROOT to your engine folder, or pass -UeRoot to Pack-WindroseMod.ps1.
+Install UE via Epic Launcher, set UeRoot in config.ini, set UE_ROOT, or pass -UeRoot to Pack-WindroseMod.ps1.
 "@
 }
 

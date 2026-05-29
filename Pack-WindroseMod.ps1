@@ -4,19 +4,29 @@
 param(
     [string]$UeRoot = "",
     [string]$Project = "",
-    [string]$ModCookDir = "/Game/Mods/WindroseMod",
+    [string]$ModCookDir = "",
     [string]$ArchiveDir = "",
-    [string]$PakBaseName = "windrosemod",
-    [string]$LogicModsDir = "C:\Program Files (x86)\Steam\steamapps\common\Windrose\R5\Content\Paks\LogicMods",
+    [string]$PakBaseName = "",
+    [string]$LogicModsDir = "",
+    [string]$ModActorAssetPath = "",
+    [string]$ModActorClassName = "",
     [switch]$InstallToLogicMods,
     [switch]$Clean
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "Get-WindroseModConfig.ps1")
 . (Join-Path $PSScriptRoot "Resolve-UnrealEngineRoot.ps1")
 
-if (-not $Project) { $Project = Join-Path $PSScriptRoot "R5.uproject" }
-if (-not $ArchiveDir) { $ArchiveDir = Join-Path $PSScriptRoot "Releases\ModPak" }
+$cfg = Get-WindroseModConfig -ProjectRoot $PSScriptRoot
+if (-not $Project) { $Project = $cfg.UprojectPath }
+if (-not $ModCookDir) { $ModCookDir = $cfg.ModCookDir }
+if (-not $ArchiveDir) { $ArchiveDir = $cfg.ArchiveDir }
+if (-not $PakBaseName) { $PakBaseName = $cfg.PakBaseName }
+if (-not $LogicModsDir) { $LogicModsDir = $cfg.LogicModsDir }
+if (-not $ModActorAssetPath) { $ModActorAssetPath = $cfg.ModActorAssetPath }
+if (-not $ModActorClassName) { $ModActorClassName = $cfg.ModActorClassName }
+if (-not $UeRoot) { $UeRoot = $cfg.UeRoot }
 
 $UeRoot = Resolve-UnrealEngineRoot -UprojectPath $Project -UeRoot $UeRoot
 Write-Host "Engine: $UeRoot" -ForegroundColor DarkGray
@@ -155,8 +165,8 @@ Rename-ModPakBundleFiles -Directory $outDir -TargetBaseName $PakBaseName
 
 $configLua = @"
 Mods["$PakBaseName"] = {
-    AssetPath = "/Game/Mods/WindroseMod/ModActor",
-    AssetName = "ModActor_C",
+    AssetPath = "$ModActorAssetPath",
+    AssetName = "$ModActorClassName",
 }
 "@
 $configPath = Join-Path $outDir "config.lua"

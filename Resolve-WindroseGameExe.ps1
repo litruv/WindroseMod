@@ -1,5 +1,17 @@
 function Resolve-WindroseGameExe {
-    param([string]$GameExe = "")
+    param(
+        [string]$GameExe = "",
+        [string]$ProjectRoot = ""
+    )
+
+    if (-not $GameExe -and $ProjectRoot) {
+        $configScript = Join-Path $ProjectRoot "Get-WindroseModConfig.ps1"
+        if (Test-Path -LiteralPath $configScript) {
+            . $configScript
+            $cfg = Get-WindroseModConfig -ProjectRoot $ProjectRoot
+            if ($cfg.GameExe) { $GameExe = $cfg.GameExe }
+        }
+    }
 
     if ($GameExe) {
         if (Test-Path -LiteralPath $GameExe) { return (Resolve-Path -LiteralPath $GameExe).Path }
@@ -35,6 +47,6 @@ function Resolve-WindroseGameExe {
 
     throw @"
 Could not find Windrose-Win64-Shipping.exe.
-Install Windrose on Steam or set WINDROSE_GAME_EXE to the full path.
+Set GameExe in config.ini (or config.local.ini), or WINDROSE_GAME_EXE, or install Windrose on Steam.
 "@
 }

@@ -7,6 +7,11 @@ function Get-WindroseModProjectRoot {
 
 function Get-UhtHeaderDumpRoot {
     param([string]$ProjectRoot = (Get-WindroseModProjectRoot))
+    $configScript = Join-Path $ProjectRoot 'Get-WindroseModConfig.ps1'
+    if (Test-Path -LiteralPath $configScript) {
+        . $configScript
+        return (Get-WindroseModConfig -ProjectRoot $ProjectRoot).UhtHeaderDumpDir
+    }
     return (Join-Path (Split-Path $ProjectRoot -Parent) 'UHTHeaderDump')
 }
 
