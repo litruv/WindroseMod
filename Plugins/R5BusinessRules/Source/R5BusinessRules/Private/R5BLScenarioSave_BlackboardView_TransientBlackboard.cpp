@@ -1,0 +1,6 @@
+#include "R5BLScenarioSave_BlackboardView_TransientBlackboard.h"
+
+UR5BLScenarioSave_BlackboardView_TransientBlackboard::UR5BLScenarioSave_BlackboardView_TransientBlackboard() {
+}
+
+

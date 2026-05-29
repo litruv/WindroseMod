@@ -1,0 +1,6 @@
+#include "R5BLLootMetaDataView_WeightedOnetimeLootTablesMetaData.h"
+
+UR5BLLootMetaDataView_WeightedOnetimeLootTablesMetaData::UR5BLLootMetaDataView_WeightedOnetimeLootTablesMetaData() {
+}
+
+

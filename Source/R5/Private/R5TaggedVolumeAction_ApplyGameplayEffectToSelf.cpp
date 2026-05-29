@@ -1,0 +1,5 @@
+#include "R5TaggedVolumeAction_ApplyGameplayEffectToSelf.h"
+
+UR5TaggedVolumeAction_ApplyGameplayEffectToSelf::UR5TaggedVolumeAction_ApplyGameplayEffectToSelf()
+{
+}

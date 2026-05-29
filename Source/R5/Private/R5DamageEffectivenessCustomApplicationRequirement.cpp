@@ -1,0 +1,5 @@
+#include "R5DamageEffectivenessCustomApplicationRequirement.h"
+
+UR5DamageEffectivenessCustomApplicationRequirement::UR5DamageEffectivenessCustomApplicationRequirement()
+{
+}

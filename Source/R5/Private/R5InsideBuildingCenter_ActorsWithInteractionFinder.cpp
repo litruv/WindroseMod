@@ -1,0 +1,5 @@
+#include "R5InsideBuildingCenter_ActorsWithInteractionFinder.h"
+
+FR5InsideBuildingCenter_ActorsWithInteractionFinder::FR5InsideBuildingCenter_ActorsWithInteractionFinder()
+{
+}

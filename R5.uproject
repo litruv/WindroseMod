@@ -1,0 +1,442 @@
+{
+    "FileVersion":  3,
+    "EngineAssociation":  "5.6",
+    "Category":  "",
+    "Description":  "",
+    "Modules":  [
+                    {
+                        "Name":  "R5",
+                        "Type":  "Runtime",
+                        "LoadingPhase":  "Default"
+                    }
+                ],
+    "Plugins":  [
+                    {
+                        "Name":  "ModelingToolsEditorMode",
+                        "Enabled":  true,
+                        "TargetAllowList":  [
+                                                "Editor"
+                                            ]
+                    },
+                    {
+                        "Name":  "GameplayAbilities",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Niagara",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "AudioGameplayVolume",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "AudioGameplay",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Metasound",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ActionManager",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ActorRegistrator",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5AgentSystem",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5AgentSystemStateTree",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5AgonesServer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5AppMonitoring",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5AuthProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5BackendProxyCommon",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5BLCommon",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Buoyancy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5BusinessLogicCore",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5BusinessRules",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Camera",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5CaProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Cinematic",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5CommonUtils",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ContextualSpawner",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5CoopProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5DataKeepers",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5DebugGraph",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5DebugHUD",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5EcProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5EntityProgression",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5EosProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5EQS",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ExternalServicesIntegrations",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Format",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5GameplayOrchestrator",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5GAS",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5GrassGenerator",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Inventory",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5JsonAssets",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5K8sClient",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5K8sSimulatorProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5LandscapeRenderer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5LoadingScreen",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Mercuna",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5MetaProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5MockDataCache",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ModelViewViewModel",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Movement",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Nature",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NCommon",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NCubicles",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NDayCycleTime",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NDeformer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NEnvironmentParticles",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Net",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NPhys",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NSurfaceTrails",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5NWater",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5P2pGate",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5PhysicsLaunch",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5PhysicsPerformanceOptimizer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5PivotPainter",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5POI",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5PointLightBalancer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5PointOfInterest",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Preloader",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Relationship",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Requirement",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5RocksDAL",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Scenario",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Ship",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Sleep",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5SocketSubsystem",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5SteamworksProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5StoveProxy",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5SystemResourceMonitor",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TaggedVolume",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGenerator",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGenerator_V0_10_0",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGenerator_V0_8_0",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGenerator_V0_9_0",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGenerator_VX_X_X",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGeneratorAPI",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGeneratorCommon",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TerrainGeneratorFacade",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5TriggeredSound",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5ViewControllers",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Visibility",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5WDSCommon",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5WDSSystem",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5Weather",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5WebSniffer",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "R5WidgetPool",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Sentry",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Agones",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "GCFSM",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "PoseSearch",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Mercuna",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "StoveSDKPlugin",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "GameFeatures",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "GameSettings",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "ReplicationGraph",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "AudioModulation",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "Soundscape",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "StateTree",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "GameplayStateTree",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "SignificanceManager",
+                        "Enabled":  true
+                    }
+                ]
+}

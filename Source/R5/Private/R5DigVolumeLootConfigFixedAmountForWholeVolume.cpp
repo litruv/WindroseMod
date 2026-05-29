@@ -1,0 +1,5 @@
+#include "R5DigVolumeLootConfigFixedAmountForWholeVolume.h"
+
+FR5DigVolumeLootConfigFixedAmountForWholeVolume::FR5DigVolumeLootConfigFixedAmountForWholeVolume()
+{
+}

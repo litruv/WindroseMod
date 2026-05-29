@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_RightTriangleVertical.h"
+
+UR5Building_SnapPrimitive_RightTriangleVertical::UR5Building_SnapPrimitive_RightTriangleVertical()
+{
+}

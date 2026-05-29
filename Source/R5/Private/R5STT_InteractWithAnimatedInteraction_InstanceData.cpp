@@ -1,0 +1,5 @@
+#include "R5STT_InteractWithAnimatedInteraction_InstanceData.h"
+
+FR5STT_InteractWithAnimatedInteraction_InstanceData::FR5STT_InteractWithAnimatedInteraction_InstanceData()
+{
+}

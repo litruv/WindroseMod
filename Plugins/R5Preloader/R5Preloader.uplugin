@@ -1,0 +1,16 @@
+{
+    "FileVersion":  3,
+    "Version":  1,
+    "VersionName":  "1.0",
+    "FriendlyName":  "R5Preloader",
+    "Description":  "Imported from UHTHeaderDump",
+    "Category":  "R5",
+    "EnabledByDefault":  true,
+    "Modules":  [
+                    {
+                        "Name":  "R5Preloader",
+                        "Type":  "Runtime",
+                        "LoadingPhase":  "Default"
+                    }
+                ]
+}

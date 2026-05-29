@@ -1,0 +1,5 @@
+#include "R5VersionizerSettings_MapVersionsEntry_VersionsEntry.h"
+
+FR5VersionizerSettings_MapVersionsEntry_VersionsEntry::FR5VersionizerSettings_MapVersionsEntry_VersionsEntry()
+{
+}

@@ -1,0 +1,5 @@
+#include "R5TaggedVolumeAction_LockPlayerRespawnDataUpdating.h"
+
+UR5TaggedVolumeAction_LockPlayerRespawnDataUpdating::UR5TaggedVolumeAction_LockPlayerRespawnDataUpdating()
+{
+}

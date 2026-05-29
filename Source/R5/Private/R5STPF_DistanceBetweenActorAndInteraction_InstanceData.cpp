@@ -1,0 +1,5 @@
+#include "R5STPF_DistanceBetweenActorAndInteraction_InstanceData.h"
+
+FR5STPF_DistanceBetweenActorAndInteraction_InstanceData::FR5STPF_DistanceBetweenActorAndInteraction_InstanceData()
+{
+}

@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_TriangularPrismCorned_Ladder.h"
+
+UR5Building_SnapPrimitive_TriangularPrismCorned_Ladder::UR5Building_SnapPrimitive_TriangularPrismCorned_Ladder()
+{
+}

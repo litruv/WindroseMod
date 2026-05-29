@@ -1,0 +1,11 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "R5AIShipMoveRequest.generated.h"
+
+USTRUCT(BlueprintType)
+struct FR5AIShipMoveRequest {
+    GENERATED_BODY()
+public:
+    R5_API FR5AIShipMoveRequest();
+};
+

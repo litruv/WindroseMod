@@ -1,0 +1,6 @@
+#include "R5BLInventoryParamsView_BlockedModulesForActionMove.h"
+
+UR5BLInventoryParamsView_BlockedModulesForActionMove::UR5BLInventoryParamsView_BlockedModulesForActionMove() {
+}
+
+

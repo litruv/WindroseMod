@@ -1,0 +1,5 @@
+#include "R5STT_GameplayEventByCrewStateChecking_InstanceData.h"
+
+FR5STT_GameplayEventByCrewStateChecking_InstanceData::FR5STT_GameplayEventByCrewStateChecking_InstanceData()
+{
+}

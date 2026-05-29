@@ -1,0 +1,6 @@
+#include "R5BLInventory_ActionMoveItemsBetweenInventoriesRule.h"
+
+UR5BLInventory_ActionMoveItemsBetweenInventoriesRule::UR5BLInventory_ActionMoveItemsBetweenInventoriesRule() {
+}
+
+

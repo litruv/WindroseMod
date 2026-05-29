@@ -1,0 +1,5 @@
+#include "R5STC_DoesAbilitySatisfyTagRequirements_InstanceData.h"
+
+FR5STC_DoesAbilitySatisfyTagRequirements_InstanceData::FR5STC_DoesAbilitySatisfyTagRequirements_InstanceData()
+{
+}

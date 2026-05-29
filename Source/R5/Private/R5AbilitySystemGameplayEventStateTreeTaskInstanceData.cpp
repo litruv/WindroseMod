@@ -1,0 +1,5 @@
+#include "R5AbilitySystemGameplayEventStateTreeTaskInstanceData.h"
+
+FR5AbilitySystemGameplayEventStateTreeTaskInstanceData::FR5AbilitySystemGameplayEventStateTreeTaskInstanceData()
+{
+}

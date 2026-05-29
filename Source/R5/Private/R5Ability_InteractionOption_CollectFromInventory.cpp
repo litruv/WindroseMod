@@ -1,0 +1,5 @@
+#include "R5Ability_InteractionOption_CollectFromInventory.h"
+
+UR5Ability_InteractionOption_CollectFromInventory::UR5Ability_InteractionOption_CollectFromInventory()
+{
+}

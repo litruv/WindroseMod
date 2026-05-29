@@ -1,0 +1,5 @@
+#include "R5AnimatedInteractionTargetComponentParams_MontageData.h"
+
+FR5AnimatedInteractionTargetComponentParams_MontageData::FR5AnimatedInteractionTargetComponentParams_MontageData()
+{
+}

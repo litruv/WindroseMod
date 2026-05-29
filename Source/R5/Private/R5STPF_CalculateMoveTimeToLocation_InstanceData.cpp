@@ -1,0 +1,5 @@
+#include "R5STPF_CalculateMoveTimeToLocation_InstanceData.h"
+
+FR5STPF_CalculateMoveTimeToLocation_InstanceData::FR5STPF_CalculateMoveTimeToLocation_InstanceData()
+{
+}

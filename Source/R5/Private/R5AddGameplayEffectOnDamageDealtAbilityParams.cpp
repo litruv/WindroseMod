@@ -1,0 +1,5 @@
+#include "R5AddGameplayEffectOnDamageDealtAbilityParams.h"
+
+UR5AddGameplayEffectOnDamageDealtAbilityParams::UR5AddGameplayEffectOnDamageDealtAbilityParams()
+{
+}

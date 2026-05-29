@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_RightTriangleHorizontal_Center.h"
+
+UR5Building_SnapPrimitive_RightTriangleHorizontal_Center::UR5Building_SnapPrimitive_RightTriangleHorizontal_Center()
+{
+}

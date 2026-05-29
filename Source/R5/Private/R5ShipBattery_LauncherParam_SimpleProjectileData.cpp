@@ -1,0 +1,5 @@
+#include "R5ShipBattery_LauncherParam_SimpleProjectileData.h"
+
+FR5ShipBattery_LauncherParam_SimpleProjectileData::FR5ShipBattery_LauncherParam_SimpleProjectileData()
+{
+}

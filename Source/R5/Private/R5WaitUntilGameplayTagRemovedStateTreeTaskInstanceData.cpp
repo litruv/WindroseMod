@@ -1,0 +1,5 @@
+#include "R5WaitUntilGameplayTagRemovedStateTreeTaskInstanceData.h"
+
+FR5WaitUntilGameplayTagRemovedStateTreeTaskInstanceData::FR5WaitUntilGameplayTagRemovedStateTreeTaskInstanceData()
+{
+}

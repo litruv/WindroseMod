@@ -1,0 +1,5 @@
+#include "R5Ability_InteractOption_TriggerAMContextActor.h"
+
+UR5Ability_InteractOption_TriggerAMContextActor::UR5Ability_InteractOption_TriggerAMContextActor()
+{
+}

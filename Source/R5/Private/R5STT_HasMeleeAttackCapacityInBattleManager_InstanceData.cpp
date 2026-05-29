@@ -1,0 +1,5 @@
+#include "R5STT_HasMeleeAttackCapacityInBattleManager_InstanceData.h"
+
+FR5STT_HasMeleeAttackCapacityInBattleManager_InstanceData::FR5STT_HasMeleeAttackCapacityInBattleManager_InstanceData()
+{
+}

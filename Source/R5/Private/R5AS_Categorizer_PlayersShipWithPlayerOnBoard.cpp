@@ -1,0 +1,5 @@
+#include "R5AS_Categorizer_PlayersShipWithPlayerOnBoard.h"
+
+UR5AS_Categorizer_PlayersShipWithPlayerOnBoard::UR5AS_Categorizer_PlayersShipWithPlayerOnBoard()
+{
+}

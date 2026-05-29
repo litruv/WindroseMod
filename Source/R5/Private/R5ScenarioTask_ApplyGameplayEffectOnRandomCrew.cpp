@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_ApplyGameplayEffectOnRandomCrew.h"
+
+UR5ScenarioTask_ApplyGameplayEffectOnRandomCrew::UR5ScenarioTask_ApplyGameplayEffectOnRandomCrew()
+{
+}

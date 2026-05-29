@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_TruncatedRectangularPyramid.h"
+
+UR5Building_SnapPrimitive_TruncatedRectangularPyramid::UR5Building_SnapPrimitive_TruncatedRectangularPyramid()
+{
+}

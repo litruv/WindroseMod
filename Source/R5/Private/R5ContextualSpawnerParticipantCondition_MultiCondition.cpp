@@ -1,0 +1,5 @@
+#include "R5ContextualSpawnerParticipantCondition_MultiCondition.h"
+
+UR5ContextualSpawnerParticipantCondition_MultiCondition::UR5ContextualSpawnerParticipantCondition_MultiCondition()
+{
+}

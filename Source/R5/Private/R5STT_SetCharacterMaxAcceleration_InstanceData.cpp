@@ -1,0 +1,5 @@
+#include "R5STT_SetCharacterMaxAcceleration_InstanceData.h"
+
+FR5STT_SetCharacterMaxAcceleration_InstanceData::FR5STT_SetCharacterMaxAcceleration_InstanceData()
+{
+}

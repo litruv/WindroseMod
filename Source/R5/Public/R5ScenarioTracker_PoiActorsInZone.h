@@ -1,0 +1,59 @@
+#pragma once
+#include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
+#include "GameplayTagContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
+#include "GameplayTagContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=R5Scenario -ObjectName=ER5ScenarioBlackboardType -FallbackName=ER5ScenarioBlackboardType
+#include "ER5ScenarioBlackboardType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=R5Scenario -ObjectName=R5ScenarioTrackerRegular -FallbackName=R5ScenarioTrackerRegular
+#include "R5ScenarioTrackerRegular.h"
+#include "Templates/SubclassOf.h"
+#include "R5ScenarioTracker_PoiActorsInZone.generated.h"
+
+class AActor;
+class UPrimitiveComponent;
+class UR5ScenarioNode;
+class UR5ScenarioTracker_PoiActorsInZone;
+class UShapeComponent;
+
+UCLASS(Blueprintable)
+class R5_API UR5ScenarioTracker_PoiActorsInZone : public UR5ScenarioTrackerRegular {
+    GENERATED_BODY()
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer TrackerTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag WriteAsTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer OverlapZoneTags;
+    
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UShapeComponent*> OverlapZones;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<AActor*> OverlapActors;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UClass* ActorClass;
+    
+public:
+    UR5ScenarioTracker_PoiActorsInZone();
+
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnActorEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnActorBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    static UR5ScenarioTracker_PoiActorsInZone* CreateTracker(ER5ScenarioBlackboardType Blackboard, bool SaveToPersistent, UR5ScenarioNode* Owner, FGameplayTagContainer ActorTags, FGameplayTag WriteToBlackboardAs, FGameplayTagContainer PoiOverlapZones, TSubclassOf<AActor> FilterClass);
+    
+};
+

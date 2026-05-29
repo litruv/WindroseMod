@@ -1,0 +1,5 @@
+#include "R5GetPointFromBattleManagerStateTreeTaskInstanceData.h"
+
+FR5GetPointFromBattleManagerStateTreeTaskInstanceData::FR5GetPointFromBattleManagerStateTreeTaskInstanceData()
+{
+}

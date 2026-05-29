@@ -1,0 +1,5 @@
+#include "R5STT_ApplyGameplayEffectWhileRunning_InstanceData.h"
+
+FR5STT_ApplyGameplayEffectWhileRunning_InstanceData::FR5STT_ApplyGameplayEffectWhileRunning_InstanceData()
+{
+}

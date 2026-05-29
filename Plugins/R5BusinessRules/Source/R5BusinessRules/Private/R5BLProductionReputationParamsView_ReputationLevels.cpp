@@ -1,0 +1,6 @@
+#include "R5BLProductionReputationParamsView_ReputationLevels.h"
+
+UR5BLProductionReputationParamsView_ReputationLevels::UR5BLProductionReputationParamsView_ReputationLevels() {
+}
+
+

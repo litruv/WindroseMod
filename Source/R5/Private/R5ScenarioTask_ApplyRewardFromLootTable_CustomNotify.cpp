@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_ApplyRewardFromLootTable_CustomNotify.h"
+
+UR5ScenarioTask_ApplyRewardFromLootTable_CustomNotify::UR5ScenarioTask_ApplyRewardFromLootTable_CustomNotify()
+{
+}

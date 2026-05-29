@@ -1,0 +1,19 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "R5AMTaskData_RemoveGameplayEffects.h"
+#include "R5AMTaskParams_Base.h"
+#include "R5AMTaskParams_RemoveGameplayEffects.generated.h"
+
+UCLASS(Blueprintable, DefaultToInstanced, EditInlineNew)
+class R5ACTIONMANAGER_API UR5AMTaskParams_RemoveGameplayEffects : public UR5AMTaskParams_Base {
+    GENERATED_BODY()
+public:
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FR5AMTaskData_RemoveGameplayEffects Params;
+    
+public:
+    UR5AMTaskParams_RemoveGameplayEffects();
+
+};
+

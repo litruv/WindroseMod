@@ -1,0 +1,5 @@
+#include "R5STT_HasRangeAttackCapacityInBattleManager_InstanceData.h"
+
+FR5STT_HasRangeAttackCapacityInBattleManager_InstanceData::FR5STT_HasRangeAttackCapacityInBattleManager_InstanceData()
+{
+}

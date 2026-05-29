@@ -1,0 +1,41 @@
+# --- Unreal Engine generated (project + plugins) ---
+**/Binaries/
+**/DerivedDataCache/
+**/Intermediate/
+**/Saved/
+
+# --- IDE / Visual Studio ---
+**/.vs/
+*.VC.db
+*.VC.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.opensdf
+*.sdf
+
+# --- Mod packaging output (rebuilt by Pack-WindroseMod.ps1) ---
+/Releases/
+/ImportLogs/
+/Build/
+
+# --- OS / editor junk ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# --- Crash / debug dumps ---
+*.dmp
+*.pdb
+*.mdb
+
+# --- Optional local overrides ---
+*.local.ps1
+*.local.bat
+local.config.json
+.env
+.env.*

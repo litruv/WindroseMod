@@ -1,0 +1,6 @@
+#include "R5BLScenarioSave_BlackboardView_PersistantBlackboard.h"
+
+UR5BLScenarioSave_BlackboardView_PersistantBlackboard::UR5BLScenarioSave_BlackboardView_PersistantBlackboard() {
+}
+
+

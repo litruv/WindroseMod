@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_TruncatedTrapezoidalPrism.h"
+
+UR5Building_SnapPrimitive_TruncatedTrapezoidalPrism::UR5Building_SnapPrimitive_TruncatedTrapezoidalPrism()
+{
+}

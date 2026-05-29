@@ -1,0 +1,5 @@
+#include "R5ContextualSpawnerParticipantCondition_ShipMotorActive.h"
+
+UR5ContextualSpawnerParticipantCondition_ShipMotorActive::UR5ContextualSpawnerParticipantCondition_ShipMotorActive()
+{
+}

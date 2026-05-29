@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_RequestBoardingInstigatorAttackers.h"
+
+UR5ScenarioTask_RequestBoardingInstigatorAttackers::UR5ScenarioTask_RequestBoardingInstigatorAttackers()
+{
+}

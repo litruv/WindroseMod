@@ -1,0 +1,5 @@
+#include "R5Ability_ApplyGameplayEffectOnCrewStateChanged.h"
+
+UR5Ability_ApplyGameplayEffectOnCrewStateChanged::UR5Ability_ApplyGameplayEffectOnCrewStateChanged()
+{
+}

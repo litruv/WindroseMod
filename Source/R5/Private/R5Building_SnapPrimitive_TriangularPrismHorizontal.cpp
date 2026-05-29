@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_TriangularPrismHorizontal.h"
+
+UR5Building_SnapPrimitive_TriangularPrismHorizontal::UR5Building_SnapPrimitive_TriangularPrismHorizontal()
+{
+}

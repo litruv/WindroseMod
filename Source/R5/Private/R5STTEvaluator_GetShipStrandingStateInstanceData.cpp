@@ -1,0 +1,5 @@
+#include "R5STTEvaluator_GetShipStrandingStateInstanceData.h"
+
+FR5STTEvaluator_GetShipStrandingStateInstanceData::FR5STTEvaluator_GetShipStrandingStateInstanceData()
+{
+}

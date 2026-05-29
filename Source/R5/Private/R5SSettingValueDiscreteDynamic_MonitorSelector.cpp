@@ -1,0 +1,5 @@
+#include "R5SSettingValueDiscreteDynamic_MonitorSelector.h"
+
+UR5SSettingValueDiscreteDynamic_MonitorSelector::UR5SSettingValueDiscreteDynamic_MonitorSelector()
+{
+}

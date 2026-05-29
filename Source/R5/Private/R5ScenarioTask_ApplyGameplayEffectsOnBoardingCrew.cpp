@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_ApplyGameplayEffectsOnBoardingCrew.h"
+
+UR5ScenarioTask_ApplyGameplayEffectsOnBoardingCrew::UR5ScenarioTask_ApplyGameplayEffectsOnBoardingCrew()
+{
+}

@@ -1,0 +1,5 @@
+#include "R5STT_SetCharacterBrakingDecelerationWalking_InstanceData.h"
+
+FR5STT_SetCharacterBrakingDecelerationWalking_InstanceData::FR5STT_SetCharacterBrakingDecelerationWalking_InstanceData()
+{
+}

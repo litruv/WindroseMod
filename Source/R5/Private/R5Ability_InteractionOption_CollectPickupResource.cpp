@@ -1,0 +1,5 @@
+#include "R5Ability_InteractionOption_CollectPickupResource.h"
+
+UR5Ability_InteractionOption_CollectPickupResource::UR5Ability_InteractionOption_CollectPickupResource()
+{
+}

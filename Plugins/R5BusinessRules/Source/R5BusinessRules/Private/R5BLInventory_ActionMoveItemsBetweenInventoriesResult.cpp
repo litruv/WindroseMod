@@ -1,0 +1,5 @@
+#include "R5BLInventory_ActionMoveItemsBetweenInventoriesResult.h"
+
+FR5BLInventory_ActionMoveItemsBetweenInventoriesResult::FR5BLInventory_ActionMoveItemsBetweenInventoriesResult() {
+}
+

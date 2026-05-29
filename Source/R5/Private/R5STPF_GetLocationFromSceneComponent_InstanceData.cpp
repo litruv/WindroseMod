@@ -1,0 +1,5 @@
+#include "R5STPF_GetLocationFromSceneComponent_InstanceData.h"
+
+FR5STPF_GetLocationFromSceneComponent_InstanceData::FR5STPF_GetLocationFromSceneComponent_InstanceData()
+{
+}

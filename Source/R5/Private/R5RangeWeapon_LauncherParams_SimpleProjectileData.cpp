@@ -1,0 +1,5 @@
+#include "R5RangeWeapon_LauncherParams_SimpleProjectileData.h"
+
+FR5RangeWeapon_LauncherParams_SimpleProjectileData::FR5RangeWeapon_LauncherParams_SimpleProjectileData()
+{
+}

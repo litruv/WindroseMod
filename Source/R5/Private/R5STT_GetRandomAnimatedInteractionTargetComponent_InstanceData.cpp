@@ -1,0 +1,5 @@
+#include "R5STT_GetRandomAnimatedInteractionTargetComponent_InstanceData.h"
+
+FR5STT_GetRandomAnimatedInteractionTargetComponent_InstanceData::FR5STT_GetRandomAnimatedInteractionTargetComponent_InstanceData()
+{
+}

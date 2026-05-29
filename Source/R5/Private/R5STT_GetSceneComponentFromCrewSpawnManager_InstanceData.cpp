@@ -1,0 +1,5 @@
+#include "R5STT_GetSceneComponentFromCrewSpawnManager_InstanceData.h"
+
+FR5STT_GetSceneComponentFromCrewSpawnManager_InstanceData::FR5STT_GetSceneComponentFromCrewSpawnManager_InstanceData()
+{
+}

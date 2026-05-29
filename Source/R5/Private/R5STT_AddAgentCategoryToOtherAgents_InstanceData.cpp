@@ -1,0 +1,5 @@
+#include "R5STT_AddAgentCategoryToOtherAgents_InstanceData.h"
+
+FR5STT_AddAgentCategoryToOtherAgents_InstanceData::FR5STT_AddAgentCategoryToOtherAgents_InstanceData()
+{
+}

@@ -1,0 +1,26 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "R5BLItemsStackData.h"
+#include "R5BLInventorySlot.generated.h"
+
+class UR5BLInventorySlotParams;
+
+USTRUCT(BlueprintType)
+struct R5BUSINESSRULES_API FR5BLInventorySlot {
+    GENERATED_BODY()
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SlotId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UR5BLInventorySlotParams> SlotParams;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FR5BLItemsStackData ItemsStack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsPersonalSlot;
+    
+    FR5BLInventorySlot();
+};
+

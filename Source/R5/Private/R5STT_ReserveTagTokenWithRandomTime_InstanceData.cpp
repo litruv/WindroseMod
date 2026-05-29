@@ -1,0 +1,5 @@
+#include "R5STT_ReserveTagTokenWithRandomTime_InstanceData.h"
+
+FR5STT_ReserveTagTokenWithRandomTime_InstanceData::FR5STT_ReserveTagTokenWithRandomTime_InstanceData()
+{
+}

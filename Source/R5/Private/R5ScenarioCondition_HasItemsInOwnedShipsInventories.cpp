@@ -1,0 +1,5 @@
+#include "R5ScenarioCondition_HasItemsInOwnedShipsInventories.h"
+
+UR5ScenarioCondition_HasItemsInOwnedShipsInventories::UR5ScenarioCondition_HasItemsInOwnedShipsInventories()
+{
+}

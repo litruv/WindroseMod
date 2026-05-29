@@ -1,0 +1,5 @@
+#include "R5StateTreeCompareDistanceConditionInstanceData.h"
+
+FR5StateTreeCompareDistanceConditionInstanceData::FR5StateTreeCompareDistanceConditionInstanceData()
+{
+}

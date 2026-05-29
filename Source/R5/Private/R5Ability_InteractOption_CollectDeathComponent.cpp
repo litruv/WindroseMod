@@ -1,0 +1,5 @@
+#include "R5Ability_InteractOption_CollectDeathComponent.h"
+
+UR5Ability_InteractOption_CollectDeathComponent::UR5Ability_InteractOption_CollectDeathComponent()
+{
+}

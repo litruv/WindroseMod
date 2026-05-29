@@ -1,0 +1,6 @@
+#include "R5BLInventoryParamsView_EffectsToRemoveOnMoveFromInventory.h"
+
+UR5BLInventoryParamsView_EffectsToRemoveOnMoveFromInventory::UR5BLInventoryParamsView_EffectsToRemoveOnMoveFromInventory() {
+}
+
+

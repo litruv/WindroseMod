@@ -1,0 +1,5 @@
+#include "R5StateTreeTraceBetweenActorsConditionInstanceData.h"
+
+FR5StateTreeTraceBetweenActorsConditionInstanceData::FR5StateTreeTraceBetweenActorsConditionInstanceData()
+{
+}

@@ -1,0 +1,5 @@
+#include "R5EncounterRequirementCustomData_TransportDamaged.h"
+
+UR5EncounterRequirementCustomData_TransportDamaged::UR5EncounterRequirementCustomData_TransportDamaged()
+{
+}

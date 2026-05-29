@@ -1,0 +1,5 @@
+#include "R5STT_HasFreeTagTokensInBattleManager_InstanceData.h"
+
+FR5STT_HasFreeTagTokensInBattleManager_InstanceData::FR5STT_HasFreeTagTokensInBattleManager_InstanceData()
+{
+}

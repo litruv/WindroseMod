@@ -1,0 +1,5 @@
+#include "R5Building_SnapPrimitive_TriangularPrismCorned.h"
+
+UR5Building_SnapPrimitive_TriangularPrismCorned::UR5Building_SnapPrimitive_TriangularPrismCorned()
+{
+}

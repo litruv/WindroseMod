@@ -1,0 +1,5 @@
+#include "R5CharacterCustomizationPresetGroupOptionData.h"
+
+FR5CharacterCustomizationPresetGroupOptionData::FR5CharacterCustomizationPresetGroupOptionData()
+{
+}

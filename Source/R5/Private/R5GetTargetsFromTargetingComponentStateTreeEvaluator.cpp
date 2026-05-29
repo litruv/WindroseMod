@@ -1,0 +1,5 @@
+#include "R5GetTargetsFromTargetingComponentStateTreeEvaluator.h"
+
+FR5GetTargetsFromTargetingComponentStateTreeEvaluator::FR5GetTargetsFromTargetingComponentStateTreeEvaluator()
+{
+}

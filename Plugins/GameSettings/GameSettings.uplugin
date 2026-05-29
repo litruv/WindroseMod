@@ -1,0 +1,16 @@
+{
+    "Version":  1,
+    "FileVersion":  3,
+    "Modules":  [
+                    {
+                        "Name":  "GameSettings",
+                        "Type":  "Runtime",
+                        "LoadingPhase":  "Default"
+                    }
+                ],
+    "EnabledByDefault":  true,
+    "Category":  "Imported",
+    "Description":  "Imported from UHTHeaderDump",
+    "VersionName":  "1.0",
+    "FriendlyName":  "GameSettings"
+}

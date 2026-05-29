@@ -1,0 +1,159 @@
+#pragma once
+#include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "Math/Vector.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=PoseSearch -ObjectName=PoseSearchQueryTrajectory -FallbackName=PoseSearchQueryTrajectory
+#include "EMerNavigationTrajectory.h"
+#include "EMercunaAvoidanceMode.h"
+#include "Mercuna2DNavigationComponent.h"
+#include "MercunaAutoNavLink.h"
+#include "MercunaGroundAgentType.h"
+#include "MercunaGroundNavigationConfiguration.h"
+#include "MercunaGroundNavigationDynamicSteeringParameters.h"
+#include "MercunaGroundNavigationSteeringParameters.h"
+#include "MercunaUsageSpec.h"
+#include "MercunaGroundNavigationComponent.generated.h"
+
+class AActor;
+class AMercunaNavGroundGrid;
+class AMercunaNavLink;
+
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+class MERCUNA_API UMercunaGroundNavigationComponent : public UMercuna2DNavigationComponent {
+    GENERATED_BODY()
+public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSwimStopped);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSwimStarted);
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSwimStarted OnSwimStarted;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSwimStopped OnSwimStopped;
+    
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    AMercunaNavGroundGrid* NavGrid;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMercunaGroundAgentType AgentType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAutomaticSteeringParameters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMercunaGroundNavigationSteeringParameters SteeringParameters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bSetCharacterControllerRotation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMercunaGroundNavigationConfiguration Configuration;
+    
+public:
+    UMercunaGroundNavigationComponent(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void UpdateDynamicSteeringParams(const FMercunaGroundNavigationDynamicSteeringParameters& NewDynamicSteeringParams);
+    
+    UFUNCTION(BlueprintCallable)
+    void TrackActor(AActor* Actor, float Distance, float Speed, FVector Offset, bool UsePartialPath);
+    
+    UFUNCTION(BlueprintCallable)
+    void Stop();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetUsageSpec(FMercunaUsageSpec NewUsageSpec);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetNavGridToBest();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetNavGrid(AMercunaNavGroundGrid* NewNavGrid);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAvoidanceAgainst(AActor* Actor, bool Enable);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAgentType(FMercunaGroundAgentType NewAgentType);
+    
+    UFUNCTION(BlueprintCallable)
+    void ResumeNavigation();
+    
+    UFUNCTION(BlueprintCallable)
+    void PauseNavigation();
+    
+    UFUNCTION(BlueprintCallable)
+    bool OverrideSpeedMultiplier(const float NewSpeedMultiplier);
+    
+    UFUNCTION(BlueprintCallable)
+    void NavLinkComplete();
+    
+    UFUNCTION(BlueprintCallable)
+    void MoveToLocations(const TArray<FVector>& Destinations, FVector EndDirection, float EndDistance, float Speed, bool UsePartialPath);
+    
+    UFUNCTION(BlueprintCallable)
+    void MoveToLocation(const FVector& Destination, FVector EndDirection, float EndDistance, float Speed, bool UsePartialPath);
+    
+    UFUNCTION(BlueprintCallable)
+    void MoveToActor(AActor* Actor, float EndDistance, float Speed, bool UsePartialPath);
+    
+    UFUNCTION(BlueprintCallable)
+    void InvalidateContextualSteeringParamsAgainstActor(AActor* Actor);
+    
+    UFUNCTION(BlueprintCallable)
+    void InvalidateContextualSteeringParams();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMercunaUsageSpec GetUsageSpec() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMercunaGroundNavigationSteeringParameters GetSteeringParameters() const;
+    
+    UFUNCTION(BlueprintCallable)
+    float GetRemainingPathLength();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EMerNavigationTrajectory GetPoseTrajectory(FPoseSearchQueryTrajectory& TrajectorySampleRange, float LookAhead, int32 SampleRate, bool ReturnAbsoluteTimes) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void GetPathInfo(bool& Valid, float& DistanceToEnd);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetNextNavLink(bool& bNextNavLinkFound, float& DistanceToNextNavLink, float& TimeToNextNavLink, FVector& TraversalStart, FVector& TraversalEnd, bool& bIsAutoGenerated, AMercunaNavLink*& NavLink, FMercunaAutoNavLink& AutoGeneratedNavLink, float MaxLookAhead) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AMercunaNavGroundGrid* GetNavGrid() const;
+    
+    UFUNCTION(BlueprintCallable)
+    FVector GetLookDirection();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FVector GetLastInputVector() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMercunaGroundNavigationDynamicSteeringParameters GetDynamicSteeringParameters() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMercunaGroundNavigationConfiguration GetConfiguration() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void ConfigureSteering(const FMercunaGroundNavigationSteeringParameters& NewSteering);
+    
+    UFUNCTION(BlueprintCallable)
+    void ConfigureMovement(EMercunaAvoidanceMode NewAvoidanceMode);
+    
+    UFUNCTION(BlueprintCallable)
+    void Configure(const FMercunaGroundNavigationConfiguration& NewConfiguration);
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearAvoidanceExclusions();
+    
+    UFUNCTION(BlueprintCallable)
+    void CancelMovement();
+    
+    UFUNCTION(BlueprintCallable)
+    void AddDestinationLocation(FVector NextDestination, bool bSmoothTransition);
+    
+};
+

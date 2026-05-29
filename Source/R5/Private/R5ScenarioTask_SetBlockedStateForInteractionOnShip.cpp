@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_SetBlockedStateForInteractionOnShip.h"
+
+UR5ScenarioTask_SetBlockedStateForInteractionOnShip::UR5ScenarioTask_SetBlockedStateForInteractionOnShip()
+{
+}

@@ -1,0 +1,16 @@
+{
+    "FileVersion":  3,
+    "Version":  1,
+    "VersionName":  "1.0",
+    "FriendlyName":  "StoveSDKPlugin",
+    "Description":  "Imported from UHTHeaderDump",
+    "Category":  "Imported",
+    "EnabledByDefault":  true,
+    "Modules":  [
+                    {
+                        "Name":  "StoveSDKPlugin",
+                        "Type":  "Runtime",
+                        "LoadingPhase":  "Default"
+                    }
+                ]
+}

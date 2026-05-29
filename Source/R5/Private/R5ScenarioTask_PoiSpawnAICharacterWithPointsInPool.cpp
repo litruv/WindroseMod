@@ -1,0 +1,5 @@
+#include "R5ScenarioTask_PoiSpawnAICharacterWithPointsInPool.h"
+
+UDEPRECATED_R5ScenarioTask_PoiSpawnAICharacterWithPointsInPool::UDEPRECATED_R5ScenarioTask_PoiSpawnAICharacterWithPointsInPool()
+{
+}
