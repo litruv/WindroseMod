@@ -1,13 +1,16 @@
 # Ensures engine plugins required by UnrealEditor-R5.dll imports are enabled in R5.uproject.
 param(
     [string]$ProjectRoot = "",
-    [string]$EngineRoot = "d:\UE_5.6\Engine"
+    [string]$EngineRoot = ""
 )
 
 
 . (Join-Path $PSScriptRoot "ProjectRoot.ps1")
 if (-not $ProjectRoot) { $ProjectRoot = Get-WindroseModProjectRoot }
 $uprojectPath = Join-Path $ProjectRoot "R5.uproject"
+if (-not $EngineRoot) {
+    $EngineRoot = Join-Path (Resolve-UnrealEngineRoot -UprojectPath $uprojectPath) "Engine"
+}
 $dllPath = Join-Path $ProjectRoot "Binaries\Win64\UnrealEditor-R5.dll"
 if (-not (Test-Path $dllPath)) {
     Write-Error "Build UnrealEditor-R5.dll first."

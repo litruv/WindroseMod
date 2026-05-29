@@ -1,7 +1,7 @@
 param(
     [string]$ProjectRoot = "",
     [string]$DumpRoot = "",
-    [string]$EngineBuildBat = "d:\UE_5.6\Engine\Build\BatchFiles\Build.bat"
+    [string]$EngineBuildBat = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -10,6 +10,7 @@ if (-not $ProjectRoot) { $ProjectRoot = Get-WindroseModProjectRoot }
 if (-not $DumpRoot) { $DumpRoot = Get-UhtHeaderDumpRoot -ProjectRoot $ProjectRoot }
 
 $uprojectPath = Join-Path $ProjectRoot "R5.uproject"
+if (-not $EngineBuildBat) { $EngineBuildBat = Resolve-UnrealEngineBuildBat -UprojectPath $uprojectPath }
 $pluginsRoot = Join-Path $ProjectRoot "Plugins"
 $logDir = Join-Path $ProjectRoot "ImportLogs"
 $summaryPath = Join-Path $logDir "r5-plugin-import-summary.csv"

@@ -26,3 +26,8 @@ function Get-WindroseModImportLog {
     param([string]$LogFileName)
     return (Join-Path (Join-Path (Get-WindroseModProjectRoot) 'ImportLogs') $LogFileName)
 }
+
+$resolveEngineScript = Join-Path (Join-Path $PSScriptRoot '..\..') 'Resolve-UnrealEngineRoot.ps1'
+if (Test-Path -LiteralPath $resolveEngineScript) {
+    . $resolveEngineScript
+}

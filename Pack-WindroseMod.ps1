@@ -2,7 +2,7 @@
 # Content: Content/Mods/WindroseMod/ModActor (+ UI). ModActor should parent Actor (not R5-only classes).
 
 param(
-    [string]$UeRoot = "d:\UE_5.6",
+    [string]$UeRoot = "",
     [string]$Project = "",
     [string]$ModCookDir = "/Game/Mods/WindroseMod",
     [string]$ArchiveDir = "",
@@ -13,8 +13,13 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "Resolve-UnrealEngineRoot.ps1")
+
 if (-not $Project) { $Project = Join-Path $PSScriptRoot "R5.uproject" }
 if (-not $ArchiveDir) { $ArchiveDir = Join-Path $PSScriptRoot "Releases\ModPak" }
+
+$UeRoot = Resolve-UnrealEngineRoot -UprojectPath $Project -UeRoot $UeRoot
+Write-Host "Engine: $UeRoot" -ForegroundColor DarkGray
 
 $EditorCmd = Join-Path $UeRoot "Engine\Binaries\Win64\UnrealEditor-Cmd.exe"
 $UnrealPak = Join-Path $UeRoot "Engine\Binaries\Win64\UnrealPak.exe"
@@ -115,6 +120,39 @@ if ($LASTEXITCODE -ne 0) { throw "UnrealPak legacy pak failed with exit code $LA
 # Do not ship global.* to LogicMods (engine already has global.utoc).
 Remove-Item -Force (Join-Path $outDir "global.ucas"), (Join-Path $outDir "global.utoc") -ErrorAction SilentlyContinue
 
+function Rename-ModPakBundleFiles {
+    param(
+        [Parameter(Mandatory)][string]$Directory,
+        [Parameter(Mandatory)][string]$TargetBaseName
+    )
+    if (-not (Test-Path $Directory)) { return }
+
+    foreach ($ext in @(".pak", ".utoc", ".ucas")) {
+        Get-ChildItem -LiteralPath $Directory -Filter "*$ext" -File -ErrorAction SilentlyContinue |
+            Where-Object { $_.BaseName -cne $TargetBaseName } |
+            ForEach-Object {
+                $dest = Join-Path $Directory ($TargetBaseName + $ext)
+                if (Test-Path -LiteralPath $dest) { Remove-Item -LiteralPath $dest -Force }
+                Write-Host "Rename: $($_.Name) -> $($TargetBaseName)$ext" -ForegroundColor DarkGray
+                Rename-Item -LiteralPath $_.FullName -NewName ($TargetBaseName + $ext)
+            }
+    }
+
+    Get-ChildItem -LiteralPath $Directory -Directory -ErrorAction SilentlyContinue |
+        Where-Object {
+            $_.Name -cne $TargetBaseName -and
+            $_.Name -match '^(?i)(windrosemod|r5-?windows|r5)$'
+        } |
+        ForEach-Object {
+            $destDir = Join-Path $Directory $TargetBaseName
+            if (Test-Path -LiteralPath $destDir) { Remove-Item -LiteralPath $destDir -Recurse -Force }
+            Write-Host "Rename: $($_.Name)\ -> $TargetBaseName\" -ForegroundColor DarkGray
+            Rename-Item -LiteralPath $_.FullName -NewName $TargetBaseName
+        }
+}
+
+Rename-ModPakBundleFiles -Directory $outDir -TargetBaseName $PakBaseName
+
 $configLua = @"
 Mods["$PakBaseName"] = {
     AssetPath = "/Game/Mods/WindroseMod/ModActor",
@@ -134,12 +172,15 @@ if ($InstallToLogicMods) {
         New-Item -ItemType Directory -Force -Path $LogicModsDir | Out-Null
     }
     Get-ChildItem $LogicModsDir -Filter "windrosemod*" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    Get-ChildItem $LogicModsDir -Filter "R5-Windows*" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    Get-ChildItem $LogicModsDir -Filter "WindroseMod*" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
     Copy-Item -Force (Join-Path $outDir "$PakBaseName.pak") (Join-Path $LogicModsDir "$PakBaseName.pak")
     Copy-Item -Force (Join-Path $outDir "$PakBaseName.utoc") (Join-Path $LogicModsDir "$PakBaseName.utoc")
     Copy-Item -Force (Join-Path $outDir "$PakBaseName.ucas") (Join-Path $LogicModsDir "$PakBaseName.ucas")
     $configDir = Join-Path $LogicModsDir $PakBaseName
     New-Item -ItemType Directory -Force -Path $configDir | Out-Null
     Copy-Item -Force $configPath (Join-Path $configDir "config.lua")
+    Rename-ModPakBundleFiles -Directory $LogicModsDir -TargetBaseName $PakBaseName
     Write-Host "Installed IoStore mod + config.lua to LogicMods." -ForegroundColor Green
 }
 else {

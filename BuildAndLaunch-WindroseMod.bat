@@ -4,7 +4,10 @@ setlocal EnableExtensions
 set "PROJECT_ROOT=%~dp0"
 set "PROJECT_ROOT=%PROJECT_ROOT:~0,-1%"
 set "PACK_SCRIPT=%PROJECT_ROOT%\Pack-WindroseMod.ps1"
-set "GAME_EXE=C:\Program Files (x86)\Steam\steamapps\common\Windrose\R5\Binaries\Win64\Windrose-Win64-Shipping.exe"
+set "RESOLVE_GAME=%PROJECT_ROOT%\Resolve-WindroseGameExe.ps1"
+
+REM UE4SS mod id / pak base name (must match config.lua Mods["..."] key)
+set "PAK_BASENAME=windrosemod"
 
 REM Default: incremental cook (skip clean). Pass -clean for a full wipe of Saved\Cooked.
 set "PACK_ARGS="
@@ -16,10 +19,13 @@ goto ParseArgs
 :ArgsDone
 
 if not exist "%PACK_SCRIPT%" goto ErrPackScript
+
+for /f "usebackq delims=" %%G in (`powershell -NoProfile -ExecutionPolicy Bypass -Command ". '%RESOLVE_GAME%'; Resolve-WindroseGameExe"`) do set "GAME_EXE=%%G"
+
 if not exist "%GAME_EXE%" goto ErrGameExe
 
-echo === Building mod pak and installing to LogicMods ===
-powershell -NoProfile -ExecutionPolicy Bypass -File "%PACK_SCRIPT%" -InstallToLogicMods %PACK_ARGS%
+echo === Building mod pak and installing to LogicMods (pak name: %PAK_BASENAME%) ===
+powershell -NoProfile -ExecutionPolicy Bypass -File "%PACK_SCRIPT%" -InstallToLogicMods -PakBaseName "%PAK_BASENAME%" %PACK_ARGS%
 if errorlevel 1 goto ErrBuild
 
 echo.
@@ -34,9 +40,7 @@ pause
 exit /b 1
 
 :ErrGameExe
-echo ERROR: Game not found:
-echo   %GAME_EXE%
-echo Edit GAME_EXE in this .bat if Windrose is installed elsewhere.
+echo ERROR: Could not find Windrose. Set WINDROSE_GAME_EXE to Windrose-Win64-Shipping.exe
 pause
 exit /b 1
 
