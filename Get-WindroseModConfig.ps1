@@ -3,6 +3,23 @@ param(
     [switch]$EmitBatVars
 )
 
+function Resolve-WindroseModProjectRoot {
+    param([string]$RootHint = "")
+
+    if ($RootHint) {
+        return (Resolve-Path -LiteralPath $RootHint).Path
+    }
+    if ($PSScriptRoot) {
+        return (Resolve-Path -LiteralPath $PSScriptRoot).Path
+    }
+    $commandPath = $MyInvocation.PSCommandPath
+    if (-not $commandPath) { $commandPath = $MyInvocation.MyCommand.Path }
+    if ($commandPath) {
+        return (Resolve-Path -LiteralPath (Split-Path -Parent $commandPath)).Path
+    }
+    return (Resolve-Path -LiteralPath (Get-Location)).Path
+}
+
 function Read-IniFile {
     param([Parameter(Mandatory)][string]$Path)
 
@@ -36,7 +53,7 @@ function Get-WindroseModConfig {
     param([string]$ProjectRoot = "")
 
     if (-not $ProjectRoot) {
-        $ProjectRoot = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
+        $ProjectRoot = Resolve-WindroseModProjectRoot
     }
     $ProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 
@@ -50,6 +67,8 @@ function Get-WindroseModConfig {
         ModActorAssetPath  = "/Game/Mods/WindroseMod/ModActor"
         ModActorClassName  = "ModActor_C"
         UhtHeaderDumpDir   = "../UHTHeaderDump"
+        LaunchViaSteam     = "1"
+        SteamAppId         = "3041230"
     }
 
     $ini = @{}
@@ -92,15 +111,17 @@ function Get-WindroseModConfig {
         ModActorAssetPath  = Get-IniValue $ini Mod ModActorAssetPath $defaults.ModActorAssetPath
         ModActorClassName  = Get-IniValue $ini Mod ModActorClassName $defaults.ModActorClassName
         UhtHeaderDumpDir   = $uhtDump
+        LaunchViaSteam     = Get-IniValue $ini Launch LaunchViaSteam $defaults.LaunchViaSteam
+        SteamAppId         = Get-IniValue $ini Launch SteamAppId $defaults.SteamAppId
     }
 }
 
 if ($MyInvocation.InvocationName -ne '.') {
-    $config = Get-WindroseModConfig -ProjectRoot $(if ($ProjectRoot) { $ProjectRoot } else { $PSScriptRoot })
+    $config = Get-WindroseModConfig -ProjectRoot $(if ($ProjectRoot) { $ProjectRoot } else { Resolve-WindroseModProjectRoot })
 
     if ($EmitBatVars) {
-        Write-Output "set WINDROSE_PAK_BASENAME=$($config.PakBaseName)"
-        Write-Output "set WINDROSE_LOGICMODS_DIR=$($config.LogicModsDir)"
+        Write-Output "set `"WINDROSE_PAK_BASENAME=$($config.PakBaseName)`""
+        Write-Output "set `"WINDROSE_LOGICMODS_DIR=$($config.LogicModsDir)`""
         exit 0
     }
 

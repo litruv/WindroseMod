@@ -33,6 +33,13 @@ If a path is left empty, scripts auto-detect where possible. Fallback env vars: 
 
 `PakBaseName`, pak filenames, and `Mods["…"]` in `config.lua` must all match.
 
+### `[Launch]`
+
+| Key | What it does |
+|-----|----------------|
+| `LaunchViaSteam` | `1` = `steam.exe -applaunch` (avoids double-start with Steam open). `0` = run `GameExe` directly |
+| `SteamAppId` | Windrose Steam app id (`3041230`) |
+
 ### `[Import]`
 
 | Key | What it does |
@@ -54,8 +61,9 @@ If a path is left empty, scripts auto-detect where possible. Fallback env vars: 
 
 | Command | Does |
 |---------|------|
-| `BuildAndLaunch-WindroseMod.bat` | Cook → pack → install → launch (reads `config.ini`) |
+| `BuildAndLaunch-WindroseMod.bat` | Cook → pack → install → launch game (reads `config.ini`) |
 | `BuildAndLaunch-WindroseMod.bat -clean` | Full recook (`Saved\Cooked` wiped) |
+| `BuildAndLaunch-WindroseMod.bat -NoLaunch` | Build/install only, do not launch game |
 | `LaunchEditor.bat` | Build editor target and open project |
 | `Pack-WindroseMod.ps1 -InstallToLogicMods` | Pack/install only |
 
@@ -72,6 +80,19 @@ Installed files: `<LogicModsDir>\<PakBaseName>.pak|.utoc|.ucas` and `<PakBaseNam
 | UE4SS | `...\R5\Binaries\Win64\ue4ss\` |
 
 ---
+
+## UE4SS log
+
+After the game runs (default Steam install):
+
+| Log | Path |
+|-----|------|
+| Main | `R5\Binaries\Win64\ue4ss\UE4SS.log` |
+| Alt | `R5\Binaries\Win64\UE4SS.log` |
+
+Look for `[BPModLoaderMod] Loading mod: <PakBaseName>` and `Actor: ModActor_C`.
+
+The mod may log **more than once per session** (map changes / `ClientRestart`) — that is not the same as two game windows. If you get **two game processes**, use `LaunchViaSteam=1` in `config.ini` (default) so the script does not start the `.exe` while Steam is already running.
 
 ## If the mod does not load
 
